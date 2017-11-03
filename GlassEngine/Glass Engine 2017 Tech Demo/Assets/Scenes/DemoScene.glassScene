@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Scene name="Demo" id="0">
+	<Models>
+		<Model name="Canyon" path="Assets/Models/Canyon_OBJ.obj"/>
+		<Model name="Valley" path="Assets/Models/ValleyTerrain.obj"/>
+	</Models>
+	<Textures>
+		<Texture name="CanyonDiffuse" path="Assets/Textures/Canyon_DIFFUSE.jpg"/>
+		<Texture name="ValleyDiffuse" path="Assets/Textures/ValleyCompleteMap.jpg"/>
+	</Textures>
+	<AudioFiles>
+		<!-- https://www.freesound.org/people/Arctura/sounds/39832/ -->
+		<AudioClip name="ambientAudio" path="Assets/Audio/OutdoorAmbi1.ogg" />
+	</AudioFiles>
+</Scene>

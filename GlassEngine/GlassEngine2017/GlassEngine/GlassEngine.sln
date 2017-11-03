@@ -1,0 +1,44 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GlassEngine2017", "GlassEngine2017\GlassEngine2017.vcxproj", "{C207A328-FF1A-3F11-9BC9-A976A66203E1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{974B280B-3E87-4C12-8438-F7AC99E3E313} = {974B280B-3E87-4C12-8438-F7AC99E3E313}
+		{16C6A03C-CFED-4E96-A03E-2159C8D047BC} = {16C6A03C-CFED-4E96-A03E-2159C8D047BC}
+		{359972F1-A5F9-4E53-917E-10650B87796F} = {359972F1-A5F9-4E53-917E-10650B87796F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ObjLoader", "ObjLoader\ObjLoader.vcxproj", "{16C6A03C-CFED-4E96-A03E-2159C8D047BC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pugixml", "pugixml\pugixml.vcxproj", "{974B280B-3E87-4C12-8438-F7AC99E3E313}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "INIH", "INIH\INIH.vcxproj", "{359972F1-A5F9-4E53-917E-10650B87796F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C207A328-FF1A-3F11-9BC9-A976A66203E1}.Debug|x64.ActiveCfg = Debug|x64
+		{C207A328-FF1A-3F11-9BC9-A976A66203E1}.Debug|x64.Build.0 = Debug|x64
+		{C207A328-FF1A-3F11-9BC9-A976A66203E1}.Release|x64.ActiveCfg = Release|x64
+		{C207A328-FF1A-3F11-9BC9-A976A66203E1}.Release|x64.Build.0 = Release|x64
+		{16C6A03C-CFED-4E96-A03E-2159C8D047BC}.Debug|x64.ActiveCfg = Debug|x64
+		{16C6A03C-CFED-4E96-A03E-2159C8D047BC}.Debug|x64.Build.0 = Debug|x64
+		{16C6A03C-CFED-4E96-A03E-2159C8D047BC}.Release|x64.ActiveCfg = Release|x64
+		{16C6A03C-CFED-4E96-A03E-2159C8D047BC}.Release|x64.Build.0 = Release|x64
+		{974B280B-3E87-4C12-8438-F7AC99E3E313}.Debug|x64.ActiveCfg = Debug|x64
+		{974B280B-3E87-4C12-8438-F7AC99E3E313}.Debug|x64.Build.0 = Debug|x64
+		{974B280B-3E87-4C12-8438-F7AC99E3E313}.Release|x64.ActiveCfg = Release|x64
+		{974B280B-3E87-4C12-8438-F7AC99E3E313}.Release|x64.Build.0 = Release|x64
+		{359972F1-A5F9-4E53-917E-10650B87796F}.Debug|x64.ActiveCfg = Debug|x64
+		{359972F1-A5F9-4E53-917E-10650B87796F}.Debug|x64.Build.0 = Debug|x64
+		{359972F1-A5F9-4E53-917E-10650B87796F}.Release|x64.ActiveCfg = Release|x64
+		{359972F1-A5F9-4E53-917E-10650B87796F}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

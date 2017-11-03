@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6A043E62-492F-3410-874A-7E93E45A4632}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{f9018b48-b402-4fa3-894d-379305ae7f5a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\VRSystem.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FileReader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Application.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PCH\stdafx.h" />
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="Source\AudioManager.h" />
+    <ClInclude Include="Source\InputDefinitions.h" />
+    <ClInclude Include="Source\InputManager.h" />
+    <ClInclude Include="Source\SceneLoader.h" />
+    <ClInclude Include="Source\Utils.h" />
+    <ClInclude Include="Source\ApplicationConfiguration.h" />
+    <ClInclude Include="Source\VulkanStructs.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\VRSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PCH\stdafx.cpp" />
+    <ClCompile Include="Source\FileReader.cpp" />
+    <ClCompile Include="Source\AudioManager.cpp" />
+    <ClCompile Include="Source\InputManager.cpp" />
+    <ClCompile Include="Source\SceneLoader.cpp" />
+    <ClCompile Include="Source\Utils.cpp" />
+    <ClCompile Include="Source\ApplicationConfiguration.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GlassEngine20171.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\GlassEngineIcon.ico" />
+  </ItemGroup>
+</Project>

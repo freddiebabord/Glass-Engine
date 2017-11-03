@@ -1,0 +1,10 @@
+﻿*.opendb
+*.db
+*.log
+[Bb]uilds
+.vs/
+*.tlog
+*.lastbuildstate
+ipch/
+x64/
+*.aps
