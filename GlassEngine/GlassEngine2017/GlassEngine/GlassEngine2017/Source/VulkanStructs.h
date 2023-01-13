@@ -4,24 +4,24 @@
 namespace GlassEngine
 {
 
-	typedef struct
+	typedef struct SwapchainBuffers
 	{
 		VkImage image;
 		VkCommandBuffer commandBuffer[2];
 		VkCommandBuffer graphicsToPresentCommand;
 		VkImageView view;
-	} SwapchainBuffers;
+	};
 
-	typedef struct
+	typedef struct Depth
 	{
 		VkImage image;
 		VkFormat format;
 		VkMemoryAllocateInfo memoryAllocationInfo;
 		VkDeviceMemory memory;
 		VkImageView view;
-	} Depth;
+	};
 
-	typedef struct
+	typedef struct Texture
 	{
 		VkSampler sampler;
 		VkImage image;
@@ -31,15 +31,15 @@ namespace GlassEngine
 		VkImageView view;
 		int32_t textureWidth{ 0 };
 		int32_t textureHeight{ 0 };
-	} Texture;
+	};
 
-	typedef struct
+	typedef struct UniformData
 	{
 		VkBuffer buffer;
 		VkMemoryAllocateInfo memoryAllocateInfo;
 		VkDeviceMemory memory;
 		VkDescriptorBufferInfo bufferInfo;
-	} UniformData;
+	};
 
 	struct UniformBufferObject {
 		glm::mat4 model;

@@ -17,7 +17,7 @@ static const char to_black[] = "\033...";
 
 
 static const char* const mapNames = {"Assets/Scenes/DemoScene.glassScene"};
-static char* const configurationFile = { "Assets/Core/DemoApplication.ini" };
+static const char* const configurationFile = { "Assets/Core/DemoApplication.ini" };
 
 namespace GlassEngine
 {
@@ -75,7 +75,7 @@ namespace GlassEngine
 		/// Creates a Vulkan Surface for rendering, sets up the graphics and present queues, creates a Vulkan logical device
 		/// get a format for the swapchain from the created surface, set up fences and semaphores for rendering later
 		void InitSwapchain();
-
+		
 		/// Prepare the Vulkan renderer. This is just used to encapsulate the setup of Vulkan objects.
 		/// Included in this function is the creation of command pools which contain command buffers,
 		/// Creation of model, depth and shader buffers, initialisation of OpenVR (if enabled), shader descriptors,

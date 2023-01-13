@@ -245,8 +245,8 @@ namespace GlassEngine
 		commandBuffer(VK_NULL_HANDLE), presentCommandPool(VK_NULL_HANDLE), swapchain(VK_NULL_HANDLE),
 		descriptorLayout(VK_NULL_HANDLE), pipelineLayout(VK_NULL_HANDLE),
 		pipelineCache(VK_NULL_HANDLE), pipeline(VK_NULL_HANDLE), descriptorPool(VK_NULL_HANDLE),
-		renderPass(VK_NULL_HANDLE), framebuffer(VK_NULL_HANDLE), textures(nullptr), textureImage(VK_NULL_HANDLE),
-		textureImageMemory(VK_NULL_HANDLE), textureImageView(VK_NULL_HANDLE), textureSampler(VK_NULL_HANDLE)
+		renderPass(VK_NULL_HANDLE), framebuffer(VK_NULL_HANDLE), textures(nullptr), textureImage(),
+		textureImageMemory(), textureImageView(), textureSampler()
 	{
 	}
 
@@ -668,10 +668,10 @@ namespace GlassEngine
 					throw std::exception("VR: Could not determin OpenVR Vulkan instance extensions");
 			}
 
+			std::vector<const char*> extensions;
+
 			// Get required extensions
 			{
-				std::vector<const char*> extensions;
-
 				unsigned int glfwExtensionCount = 0;
 				const char** glfwExtensions;
 				glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
@@ -679,12 +679,14 @@ namespace GlassEngine
 				for (unsigned int i = 0; i < glfwExtensionCount; i++) {
 					extensions.push_back(glfwExtensions[i]);
 				}
+				for (unsigned int i = 0; i < openvrInstanceExtensions.size(); i++) {
+					extensions.push_back(openvrInstanceExtensions[i].c_str());
+				}
 				//validate = false;
 				if (validate) {
 					extensions.push_back(VK_EXT_DEBUG_REPORT_EXTENSION_NAME);
-					char const *const instanceValidationLayersAlt1[] = {
-						"VK_LAYER_LUNARG_parameter_validation", "VK_LAYER_LUNARG_object_tracker",
-						"VK_LAYER_LUNARG_core_validation",      "VK_LAYER_LUNARG_swapchain" };
+					char const* const instanceValidationLayersAlt1[] = {
+						"VK_LAYER_KHRONOS_validation" };
 
 					VkBool32 validationFound = VK_FALSE;
 
@@ -714,12 +716,13 @@ namespace GlassEngine
 			}
 
 			// Look for instance extensions
-			{
+			/*{
 				VkBool32 surfaceFound = VK_FALSE;
 				VkBool32 platformSurfaceFound = VK_FALSE;
 				
 
 				memset(extensionNames, 0, sizeof(extensionNames));
+				
 
 				assert(vkEnumerateInstanceExtensionProperties(nullptr, &instanceExtensionCount, nullptr) == VK_SUCCESS);
 
@@ -755,7 +758,7 @@ namespace GlassEngine
 				if(!surfaceFound || !platformSurfaceFound)
 					throw std::exception("VK: Failed to find Vulkan surface formats");
 
-			}
+			}*/
 
 			// Create app instance and debug callbacks
 			{
@@ -764,16 +767,16 @@ namespace GlassEngine
 				appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
 				appInfo.pApplicationName = applicationSettings.Instance()->core.appName;
 				appInfo.applicationVersion = VK_MAKE_VERSION(applicationSettings.Instance()->core.appVersionMajor, applicationSettings.Instance()->core.appVersionMinor, applicationSettings.Instance()->core.appVersionPatch);
-				appInfo.pEngineName = "Glass Engine 2017";
-				appInfo.engineVersion = VK_MAKE_VERSION(2, 0, 0);
-				appInfo.apiVersion = VK_API_VERSION_1_0;
+				appInfo.pEngineName = "Glass Engine";
+				appInfo.engineVersion = VK_MAKE_VERSION(3, 0, 0);
+				appInfo.apiVersion = VK_API_VERSION_1_3;
 
 				VkInstanceCreateInfo instanceCreateInfo = {};
 				instanceCreateInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
 				instanceCreateInfo.pApplicationInfo = &appInfo;
 
-				instanceCreateInfo.enabledExtensionCount = enabledExtensionCount;
-				instanceCreateInfo.ppEnabledExtensionNames = extensionNames;
+				instanceCreateInfo.enabledExtensionCount = extensions.size();
+				instanceCreateInfo.ppEnabledExtensionNames = extensions.data();
 				instanceCreateInfo.enabledLayerCount = enabledLayerCount;
 				instanceCreateInfo.ppEnabledLayerNames = enabledLayers;
 				
